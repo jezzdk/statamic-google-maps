@@ -33,10 +33,6 @@ class GoogleMap extends Fieldtype
 
     public function augment($value)
     {
-        if (!isset($value['showControls'])) {
-            $value['showControls'] = $this->config('showControls', false);
-        }
-
         return MapHelper::convertToHtml($value);
     }
 
@@ -120,13 +116,6 @@ class GoogleMap extends Fieldtype
             'geocoder' => [
                 'display' => 'Enable Geocoder',
                 'instructions' => 'The Geocoder API must be enabled in Google Cloud Console for this to work.',
-                'type' => 'toggle',
-                'default' => false,
-                'width' => 50
-            ],
-            'showControls' => [
-                'display' => 'Show controls (deprecated)',
-                'instructions' => 'This can now be set on the resource and will be removed in a later release.',
                 'type' => 'toggle',
                 'default' => false,
                 'width' => 50
