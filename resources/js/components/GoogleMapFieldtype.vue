@@ -230,7 +230,7 @@ onMounted(() => {
 <template>
     <div class="space-y-2">
         <ui-input v-if="hasGeocoder" type="text" v-model="location" @keyup.enter="findPosition" placeholder="Search location" />
-        <div class="w-full h-96 rounded" ref="mapRef"></div>
+        <div class="w-full h-96 rounded google-maps-container" ref="mapRef"></div>
         <div class="flex justify-between">
             <div>
                 <ui-button v-if="hasMarker" variant="danger" size="xs" text="Remove marker" @click.prevent="removeMarker()" />
